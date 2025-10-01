@@ -105,7 +105,7 @@ Server_3:
 
 ![Screen_6](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_6.png)
 
-![Screen_7](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_7.png)
+![Screen_7](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_7_1.png)
 
 Теперь разместим наши шарды на разных серверах:
 
