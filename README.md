@@ -75,15 +75,18 @@
 Server_1 будет хранить шарды:
 - Пользователи_VS1
 - Книги_VS1
+
 ![Screen_3](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_3.png)
 
 Server_2 будет хранить шарды:
 - Пользователи_VS2
 - Книги_VS2
+
 ![Screen_4](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_4.png)
 
 Server_3:
 - "магазины"
+
 ![Screen_5](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_5.png)
 
 ---
