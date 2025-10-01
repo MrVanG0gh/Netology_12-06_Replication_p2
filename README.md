@@ -41,7 +41,7 @@
 
 ## Решение 2
 
-Добавим чуть больше фактов о нашей гипотетической БД. Предположим, что в таблице "пользователи" у нас есть столбцы:
+Добавим чуть больше фактов о нашей гипотетической БД. Предположим, что в таблице "Пользователи" у нас есть столбцы:
 - id
 - Фамилия
 - Имя
@@ -61,32 +61,66 @@
 
 ### Вертикальный шардинг
 
-Предположим, что мы хотим разбить нашу БД на несколько шард из-за того, что часть информации (например, Фамилия, имя и телефон) запрашивается чаще других.
-Поэтому разобьем таблицу "пользователи" на две:
+Предположим, что мы хотим разбить нашу БД на несколько шард из-за того, что часть информации (например, фамилия, имя и телефон) запрашивается чаще других.
+Поэтому разобьем таблицу "Пользователи" на две:
 
 ![Screen_1](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_1.png)
 
-И таблицу "книги" тоже разобьем на две части:
+И таблицу "Книги" тоже разобьем на две части:
 
 ![Screen_2](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_2.png)
 
 Теперь разместим наши шарды на разных серверах:
 
 Server_1 будет хранить шарды:
-- Пользователи_VS1
-- Книги_VS1
+- "Пользователи_VS1"
+- "Книги_VS1"
 
 ![Screen_3](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_3.png)
 
 Server_2 будет хранить шарды:
-- Пользователи_VS2
-- Книги_VS2
+- "Пользователи_VS2"
+- "Книги_VS2"
 
 ![Screen_4](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_4.png)
 
 Server_3:
-- "магазины"
+- "Магазины"
 
 ![Screen_5](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_5.png)
+
+Таким образом, при помощи шардинга удалось разнести по различным серверам столбцы таблиц по частоте обращений к БД.
+
+### Горизонтальный шардинг
+
+Предположим, что теперь мы хотим равномерно распределить данные по нескольким серверам. Тогда разделение таблиц "Пользователи" и "Книги" будет произведено в соответствии со значениями столбца ID:
+
+Значения с 1 по 1 000 000 будут храниться на Server_1. Значения с 1 000 001 по 2 000 000 - на Server_2
+
+![Screen_6](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_6.png)
+
+![Screen_7](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_7.png)
+
+Теперь разместим наши шарды на разных серверах:
+
+Server_1 будет хранить шарды:
+- "Пользователи_HS1"
+- "Книги_HS1"
+
+![Screen_8](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_8.png)
+
+Server_1 будет хранить шарды:
+- "Пользователи_HS2"
+- "Книги_HS2"
+
+![Screen_9](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_9.png)
+
+
+Server_3:
+- "Магазины"
+
+![Screen_10](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_10.png)
+
+Таким образом, при помощи шардинга удалось равномерно распределить объемные таблицы по различным серверам.
 
 ---
