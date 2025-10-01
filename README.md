@@ -67,11 +67,11 @@
 Предположим, что мы хотим разбить нашу БД на несколько шард из-за того, что часть информации (например, фамилия, имя и телефон) запрашивается чаще других.
 Поэтому разобьем таблицу "Пользователи" на две:
 
-![Screen_1](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_1.png)
+![Screen_1](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_1_1.png)
 
 И таблицу "Книги" тоже разобьем на две части:
 
-![Screen_2](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_2.png)
+![Screen_2](https://github.com/MrVanG0gh/Netology_12-07_Replication_p2/blob/main/Screenshots/Screenshot_2_1.png)
 
 Теперь разместим наши шарды на разных серверах:
 
